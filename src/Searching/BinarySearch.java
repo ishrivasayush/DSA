@@ -16,14 +16,14 @@ public class BinarySearch {
         }
         System.out.println("Enter the value of Key");
         int Key= scanner.nextInt();
-//        System.out.println(binarySearch(arr,Key));
-        System.out.println(binarySearchr(arr,Key,0,n-1));
+        System.out.println(binarySearch(arr,Key));
+//        System.out.println(binarySearchr(arr,Key,0,n-1));
     }
     // O(logn)
     static int binarySearch(int arr[],int key)
     {
         int low=0,high=arr.length-1;
-        while (low<=high)
+        while (low!=high)
         {
             int mid=(low+high)/2;
             if (arr[mid]==key)
@@ -47,7 +47,7 @@ public class BinarySearch {
         {
             return -1;
         }
-        int mid=(low+high)/2;
+        int mid=(low+(high-low))/2;
         if (arr[mid]==key)
         {
             return mid;
